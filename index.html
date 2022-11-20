@@ -215,6 +215,8 @@
 function Cl(){
 let m=document.querySelector("#cal");
 m.innerText="";
+
+document.getElementById("men").innerText="";
 }
 
 
@@ -277,14 +279,20 @@ return arr.indexOf(e) < 0
  j = j.map((e) => {
    return Number(e)
  })
- console.log(j, p)
  let mar = []
  for (let i = 0; i < j.length; i++) {
    mar.push(j[i], p[i])
+   console.log(mar)
  }
+ 
  mar = mar.filter((e) => {
-   return Boolean(e)
+   return e != undefined
  })
+ mar = mar.filter((e) => {
+   return e != NaN
+ })
+ console.log(j, p,mar)
+ 
  for (let j = 0; j<900;j++){
    let i=mar.indexOf("^")
    if (i != -1) {
