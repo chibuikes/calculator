@@ -238,6 +238,7 @@ if(e.innerText=="" ||e.innerText=="0"){
 }
 else if(array.indexOf(e.innerText[0])==-1|| array.indexOf(e.innerText[r]) ==-1
 ){
+ document.getElementById("cal").innerText=""
 
   document.getElementById("men").innerText="Syntax error"
   
@@ -332,6 +333,7 @@ for(let j = 0; j < 900; j++){
  }
  console.log(mar)
  document.getElementById("men").innerText= mar[0]
+ document.getElementById("cal").innerText=""
 }
 
 }
