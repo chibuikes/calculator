@@ -1,0 +1,363 @@
+  <!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator</title>
+  <style>
+  @media(max-width:500px){
+    body{
+    background: white
+  }
+    .div {
+      border-radius:50%;
+      padding: 20px;
+      margin: 3px;
+      background:gray;
+      border: 1px solid black;
+      font-size: 30px;
+      font-weight: bold;
+      color:white;
+      width: 40px;
+      height: 30px;
+      text-align: center;
+      box-shadow:2px 2px 3px 4px gray;
+      
+    }
+        .divv{
+      border-radius:50%;
+          color:white;
+          padding: 20px;
+          margin: 6px;
+          background: #ff6600;
+         border: 1px solid ;
+          font-size: 20px;
+          font-weight: bold;
+          width: 50px;
+          height: 30px;
+          text-align: center;
+          box-shadow:2px 2px 3px 4px gray;
+        }
+    .dive{
+      display:flex;
+    }
+    .l{
+      color:white;
+      background:#FF6600;
+      
+    }
+    .ll{
+      background:#FF6600;
+      border-radius:50%;
+    }
+    #cal{
+      font-size:30px;
+      color:black;
+      height:40px;
+      width:90vw;
+      margin:0px 5px;
+      word-wrap: break-word;
+      border:0px solid white;
+  
+      
+        }
+        
+  #men{
+      font-size:30px;
+      color:black;
+      width:90vw;
+      height:40px;
+      margin:0px 5px
+      border:2px solid white
+      text-align:center;
+      word-wrap: break-word;
+      }
+      .fg{
+        border:1px solid black;
+        box-shadow: 1px 2px gray
+      }
+  }
+  @media(min-width:510px){
+    body{
+    background: white
+  }
+    .div {
+      border-radius:50%;
+      padding: 20px;
+      margin: 3px;
+      background:gray;
+      border: 1px solid black;
+      font-size: 30px;
+      font-weight: bold;
+      color:white;
+      width: 40px;
+      height: 30px;
+      text-align: center;
+      box-shadow:2px 2px 3px 4px gray;
+      
+    }
+        .divv{
+      border-radius:50%;
+          color:white;
+          padding: 20px;
+          margin: 6px;
+          background: #ff6600;
+         border: 1px solid ;
+          font-size: 20px;
+          font-weight: bold;
+          width: 40px;
+          height: 30px;
+          text-align: center;
+          box-shadow:2px 2px 3px 4px gray;
+        }
+    .dive{
+      display:flex;
+    }
+    .l{
+      color:white;
+      background:#FF6600;
+      
+    }
+    .ll{
+      background:#FF6600;
+      border-radius:50%;
+    }
+    #cal{
+      font-size:30px;
+      color:black;
+      height:40px;
+      width:90vw;
+      margin:0px 5px;
+      word-wrap: break-word;
+      border:0px solid white;
+  
+      
+        }
+        
+  #men{
+      font-size:30px;
+      color:black;
+      width:90vw;
+      height:40px;
+      margin:0px 5px
+      border:2px solid white
+      text-align:center;
+      word-wrap: break-word;
+      }
+      .fg{
+        border:1px solid black;
+        box-shadow: 1px 2px gray;
+        width:40vw;
+      }
+      .am{
+        width:50vw;
+      }
+  }
+  </style>
+</head>
+
+<body>
+<div class="fg">
+    <div class="di">
+       <p id="cal"></p>
+     </div>
+     
+         <div class="di">
+      <p id="men" ></p>
+    </div>
+    </div>
+    <div class="am">
+<div class="dive">
+  <div class="divv l" onclick="Cl()">AC</div>
+  <div class="divv l" onclick="Del()">DEL</div>
+  <div class="div l">^</div>
+  
+  <div class="div l">/</div>
+</div>    
+    
+    
+<div class="dive">
+  <div class="div">7</div>
+  <div class="div">8</div>
+  <div class="div">9</div>
+  <div class="div l">*</div>
+  
+</div>
+<div class="dive">
+  <div class="div">4</div>
+  <div class="div">5</div>
+  <div class="div">6</div>
+  <div class="div l">+</div>
+  
+</div>
+
+
+<div class="dive">
+  <div class="div">1</div>
+  <div class="div">2</div>
+  <div class="div">3</div>
+  <div class="div l">-</div>
+</div>
+
+
+<div class="dive">
+  <div class="div">0</div>
+  <div class="div">.</div>
+  <div class="div">e^</div>
+  <div class="divv ll" onclick="eql()">=</div>
+  
+</div>
+</div>
+
+
+<script>
+function Cl(){
+let m=document.querySelector("#cal");
+m.innerText="";
+}
+
+
+function Del(){
+  let b = document.getElementById("cal").innerText.split("")
+  d = b.pop()
+  
+  document.getElementById("cal").innerText = b.join("")
+}
+
+
+function eql(){
+  let e= document.getElementById("cal")
+ let array = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","e","."]
+  let r=e.innerText.length -1
+if(e.innerText=="" ||e.innerText=="0"){
+  document.getElementById("men").innerText=0
+ 
+}
+else if(array.indexOf(e.innerText[0])==-1|| array.indexOf(e.innerText[r]) ==-1
+){
+
+  document.getElementById("men").innerText="Syntax error"
+  
+}
+
+else{
+ let kk = e.innerText.split("")
+ //let arr=[1,2,3,4,5,6,7,8,9,0]
+ let arr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","e","."]
+ let s = kk.filter((e)=>{
+return arr.indexOf(e) < 0
+ })
+ //let j=e.innerText.split(`${s[0]}`)
+ let d = ""
+ let j = []
+ let p = []
+ let h = -1
+ for(let i = 0; i < kk.length; i++){
+   if(s.indexOf(kk[i]) == -1){
+    if(kk[i]=="e"){
+      j.push(2.71828183)
+    }
+     d = d + kk[i]
+   }
+   else if (s.indexOf(kk[i]) >= 0 && d != "") {
+     h = h + 2
+     j.push(d)
+     p.push(kk[i])
+ 
+     d = ""
+   }
+   if (i === kk.length - 1 && d != "") {
+     j.push(d)
+   }
+ }
+ // console.log(j)
+ 
+ 
+ j = j.map((e) => {
+   return Number(e)
+ })
+ console.log(j, p)
+ let mar = []
+ for (let i = 0; i < j.length; i++) {
+   mar.push(j[i], p[i])
+ }
+ mar = mar.filter((e) => {
+   return Boolean(e)
+ })
+ for (let j = 0; j<900;j++){
+   let i=mar.indexOf("^")
+   if (i != -1) {
+     let val = mar[i - 1]**mar[i + 1]
+     mar.splice(i - 1, 3, val)
+   }
+ }
+ for(let j=0; j<900; j++){
+ let i=mar.indexOf("*")
+ if(i!= -1){
+    let val = mar[i-1]* mar[i+1]
+    mar.splice(i-1,3,val)
+   }
+ }
+ 
+for(let j = 0; j < 900; j++){
+   let i = mar.indexOf("/")
+   if(i!=-1){
+     let val = mar[i-1]/mar[i + 1]
+  mar.splice(i-1, 3,val)
+   }
+ }
+ for(let j =0; j<900;j++){
+   let i = mar.indexOf("+")
+   if (i!=-1){
+     let val=mar[i-1]+mar[i + 1]
+     mar.splice(i-1, 3,val)
+   }
+ }
+ 
+ for(let j = 0; j< 900; j++){
+   let i = mar.indexOf("-")
+   if (i != -1){
+  let val = mar[i-1]- mar[i+1]
+  mar.splice(i-1, 3, val)
+   }
+ }
+ console.log(mar)
+ document.getElementById("men").innerText= mar[0]
+}
+
+}
+
+
+
+
+
+
+
+
+  function call(e){
+    let zz=document.getElementById("cal")
+    let u=zz.innerText;
+    let st=zz.innerText.length
+    if(st<27){
+let signs=["+", "/", "-", "*", "^"]
+ if(signs.indexOf(u[st-1])>=0 && signs.indexOf(e.target.innerText)>=0){
+  zz.innerText[st-1]=e.target.innerText
+      }
+      else{
+    zz.innerText=zz.innerText+e.target.innerText
+    }
+    }
+    else{
+      zz.innerText=zz.innerText
+    }
+  }
+  let m= document.querySelectorAll(".div");
+  m.forEach((e)=>{
+    e.addEventListener("click",call) })
+   // 2.71828183
+   
+</script>
+</body>
+
+</html>
