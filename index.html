@@ -220,18 +220,16 @@ function Del(){
   document.getElementById("cal").innerText = b.join("")
 }
 
-
 function eql(){
   let e= document.getElementById("cal")
  let array = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0","e","."]
   let r=e.innerText.length -1
-if(e.innerText=="" ||e.innerText=="0"){
+if(e.innerText==""){
   document.getElementById("men").innerText=0
  
 }
 else if(array.indexOf(e.innerText[0])==-1|| array.indexOf(e.innerText[r]) ==-1
 ){
- document.getElementById("cal").innerText=""
 
   document.getElementById("men").innerText="Syntax error"
   
@@ -273,20 +271,14 @@ return arr.indexOf(e) < 0
  j = j.map((e) => {
    return Number(e)
  })
+ console.log(j, p)
  let mar = []
  for (let i = 0; i < j.length; i++) {
    mar.push(j[i], p[i])
-   console.log(mar)
  }
- 
  mar = mar.filter((e) => {
-   return e != undefined
+   return Boolean(e)
  })
- mar = mar.filter((e) => {
-   return e != NaN
- })
- console.log(j, p,mar)
- 
  for (let j = 0; j<900;j++){
    let i=mar.indexOf("^")
    if (i != -1) {
@@ -326,7 +318,6 @@ for(let j = 0; j < 900; j++){
  }
  console.log(mar)
  document.getElementById("men").innerText= mar[0]
- document.getElementById("cal").innerText=""
 }
 
 }
