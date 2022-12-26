@@ -277,8 +277,9 @@ return arr.indexOf(e) < 0
    mar.push(j[i], p[i])
  }
  mar = mar.filter((e) => {
-   return Boolean(e)
+   return Boolean(e) || e===0
  })
+ console.log(mar)
  for (let j = 0; j<900;j++){
    let i=mar.indexOf("^")
    if (i != -1) {
